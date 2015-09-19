@@ -1,28 +1,28 @@
 class VkontakteSearcher
   attr_accessor :vk
-  attr_accessor :sex
 
   PAGE = 20
-  UNIVERSITIES = []
+  TOKEN = "716ddd52d747b62ab5ebd594d25b7f2d3020c85f1a84d59d4302fd4a238eb072ce5f732374a8ec2279206"
 
-  def initialize(token, sex)
-    @vk = VkontakteApi::Client.new(token)
-    @sex = sex
+  def initialize
+    @vk = VkontakteApi::Client.new(TOKEN)
   end
 
   def display_univers_data
-    token = "716ddd52d747b62ab5ebd594d25b7f2d3020c85f1a84d59d4302fd4a238eb072ce5f732374a8ec2279206"
-
-    puts "Parsing university..."
-
-    univ = vk.database.getUniversities(city_id: 282)
-
-    univ.id.each do |idd|
-      puts idd
-      facultet = vk.database.getFaculties(university_id: #{idd})
-      facultet.each do |facIdd|
-        puts facIdd
+    universities = @vk.database.getUniversities(city_id: 282).delete(1)
+    universities.each do |uni|
+      University.create(vk_id: uni.id, name: uni.name)
+      puts "Save uni #{uni.name}"
+      faculties = @vk.database.getFaculties(university_id: uni.id)
+      facultet.each do |faculty|
+        faculty_data = {
+          vk_id: faculty.id,
+          university_id: uni.id,
+          name: faculty.name
+        }
+        Faculty.create(faculty_data)
       end
+      puts "Save all faculties for uni #{uni.name}"
     end
 
     puts "Done."
