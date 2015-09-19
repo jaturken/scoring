@@ -10,7 +10,7 @@ class VkontakteSearcher
     @sex = sex
   end
 
-  def run
+  def display_univers_data
 
   end
 end

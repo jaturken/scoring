@@ -58,3 +58,12 @@ namespace :db do
     end.compact.max || 0).to_i
   end
 end
+
+namespace :parser do
+  require './config/initializers/models'
+
+  desc "Save universities and faculties"
+  task :save_universities_and_faculties do
+
+  end
+end
