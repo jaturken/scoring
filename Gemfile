@@ -7,6 +7,7 @@ gem 'foreman'
 gem 'sequel'
 gem 'mysql2'
 gem 'sidekiq'
+gem 'koala'
 
 group :development do
   gem 'pry'
