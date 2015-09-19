@@ -8,6 +8,7 @@ gem 'sequel'
 gem 'mysql2'
 gem 'sidekiq'
 gem 'koala'
+gem 'vk-ruby'
 
 group :development do
   gem 'pry'
