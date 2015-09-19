@@ -6,6 +6,7 @@ Sequel.migration do
       Integer :university_id
       Integer :city_id, null: false, default: 282
       Integer :country_id, null: false, default: 3
+      String :name, size: 256, null: false, default: ''
     end
   end
 end
