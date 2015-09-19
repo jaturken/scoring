@@ -1,5 +1,15 @@
 require 'sinatra'
 
-get '/test' do
- "Tatiana go sleep"
+
+get '/' do
+  # Email input
+ "Tatiana go work"
+end
+
+get '/user/:id' do
+  # Display user data
+end
+
+get '*' do
+  erb :go_away
 end
