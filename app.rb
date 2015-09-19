@@ -1,21 +1,20 @@
 require 'sinatra'
 require "./config/initializers/models"
 
-
 get '/' do
-  # Email input
- #"Tatiana go work"
  erb :home
 end
 
 post '/data' do
   email = params[:email]
-
-# TODO: save email, redirect to user page
+  puts params
+  # TODO: save user
+  redirect '/'
 end
 
 get '/user/:id' do
-  # Display user data
+  @user = User[params[:id]]
+  erb :user
 end
 
 get '*' do
