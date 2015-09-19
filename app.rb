@@ -3,7 +3,8 @@ require 'sinatra'
 
 get '/' do
   # Email input
- "Tatiana go work"
+ #"Tatiana go work"
+ erb :home
 end
 
 post '/data' do
