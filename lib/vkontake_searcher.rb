@@ -9,7 +9,7 @@ class VkontakteSearcher
   end
 
   def display_univers_data
-    universities = @vk.database.getUniversities(city_id: 282).delete(1)
+    universities = @vk.database.getUniversities(city_id: 282)[1..-1]
     universities.each do |uni|
       University.create(vk_id: uni.id, name: uni.name)
       puts "Save uni #{uni.name}"
