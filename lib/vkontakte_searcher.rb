@@ -1,3 +1,4 @@
+require 'vkontakte_api'
 class VkontakteSearcher
   attr_accessor :vk
 
