@@ -2,6 +2,7 @@ require 'sinatra'
 require "sidekiq"
 require "./config/initializers/models"
 require "./config/initializers/parsers"
+require "./config/initializers/constants"
 
 get '/' do
  erb :home
