@@ -6,6 +6,7 @@ gem 'thin'
 gem 'foreman'
 gem 'sequel'
 gem 'mysql2'
+gem 'sidekiq'
 
 group :development do
   gem 'pry'

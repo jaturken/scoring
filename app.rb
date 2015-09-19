@@ -1,5 +1,7 @@
 require 'sinatra'
+require "sidekiq"
 require "./config/initializers/models"
+require "./config/initializers/parsers"
 
 get '/' do
  erb :home
@@ -8,6 +10,7 @@ end
 post '/data' do
   email = params[:email]
   user = User.create(email: email)
+  FacebookParser.perform_async(user.id)
   redirect "/user/#{user.id}"
 end
 
