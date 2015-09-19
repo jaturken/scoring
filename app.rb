@@ -1,4 +1,5 @@
 require 'sinatra'
+require "./config/initializers/models"
 
 
 get '/' do
@@ -8,6 +9,8 @@ get '/' do
 end
 
 post '/data' do
+  email = params[:email]
+
 # TODO: save email, redirect to user page
 end
 
