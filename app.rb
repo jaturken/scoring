@@ -7,9 +7,8 @@ end
 
 post '/data' do
   email = params[:email]
-  puts params
-  # TODO: save user
-  redirect '/'
+  user = User.create(email: params[:email])
+  redirect "/user/#{user.id}"
 end
 
 get '/user/:id' do

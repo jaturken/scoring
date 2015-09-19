@@ -1,4 +1,5 @@
 require 'sequel'
+require 'logger'
 
 db_config = {
   adapter: 'mysql2',
@@ -7,3 +8,4 @@ db_config = {
   database: 'scoring'
 }
 DB = Sequel.connect(db_config)
+DB.loggers << Logger.new($stdout)
