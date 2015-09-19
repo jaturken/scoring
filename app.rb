@@ -6,6 +6,10 @@ get '/' do
  "Tatiana go work"
 end
 
+post '/data' do
+# TODO: save email, redirect to user page
+end
+
 get '/user/:id' do
   # Display user data
 end
