@@ -1,16 +1,62 @@
 <html>
     <head>
         <title>Social Scoring</title>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     </head>
 <body>
 
-<h1>Enter email address here</h1>
+<div class="row">
+  <div class="col-lg-1"></div>
+  <div class="col-lg-6">
 
 <form action="/data" method="POST">
-    Email address: <input type="text" name="email">
-    <br/>
-    <input type="submit">
+    <h3>Категория</h3>
+    <div class="radio">
+      <input id="credit-product" type="radio" name="categori" value=0 checked> <label for="credit-product">Кредитные продукты</label>
+    </div>
+    <div class="radio">
+      <input id="sber-product" type="radio" name="categori" value=1> <label for="sber-product">Сберегательные продукты</label>
+    </div>
+    <div class="radio">
+      <input id="kart-product" type="radio" name="categori" value=2> <label for="kart-product">Карточные продукты</label>>
+    </div>
+    
+
+     <h3>Сумма</h3>
+     <div class="radio">
+        <input id="1mln-sum" type="radio" name="summa" value=0 checked> <label for="1mln-sum">до 1 млн</label>
+     </div>
+     <div class="radio">
+        <input id="3mln-sum" type="radio" name="summa" value=1> <label for="3mln-sum">от 3 млн до 5 млн</label>
+    </div>
+    <div class="radio">
+        <input id="5mln-sum" type="radio" name="summa" value=2> <label for="5mln-sum">более 5 млн</label>
+    </div>
+
+    <h3>Сумма</h3>
+    <div class="radio">
+        <input id="Minsk" type="radio" name="region" value=0 checked> <label for="minsk">Минск</label>
+    </div>
+    <div class="radio">
+      <input id="oblast" type="radio" name="region" value=1> <label for="oblast">Областные центры</label>
+    </div>
+    <div class="radio">
+      <input id="region" type="radio" name="region" value=2> <label for="region">Регионы</label>
+    </div>
+    
+    <input class="btn btn-default" type="submit" value="Найти клиентов">
+    <input class="btn btn-default" type="submit" value="Сформировать портфель клиента">
+
 </form>
+
+</div>
 
 </body>
 </html>
