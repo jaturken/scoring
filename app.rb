@@ -3,6 +3,7 @@ require "sidekiq"
 require "./config/initializers/models"
 require "./config/initializers/parsers"
 require "./config/initializers/constants"
+require "./lib/vkontakte_searcher"
 
 get '/' do
  erb :home

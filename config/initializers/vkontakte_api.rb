@@ -1,3 +1,4 @@
+require 'logger'
 VkontakteApi.configure do |config|
   # параметры, необходимые для авторизации средствами vkontakte_api
   # (не нужны при использовании сторонней авторизации)
@@ -12,9 +13,18 @@ VkontakteApi.configure do |config|
   config.max_retries = 2
 
   # логгер
-  # config.log_requests  = true  # URL-ы запросов
-  # config.log_errors    = true  # ошибки
+  config.logger = Logger.new('/dev/null')
+  config.log_requests  = false  # URL-ы запросов
+  config.log_errors    = true  # ошибки
   config.log_responses = false # удачные ответы
+  # config.faraday_options = {
+  #   proxy: {
+  #     uri:      '5.53.16.183',
+  #     port: 8080
+  #     # user:     'foo',
+  #     # password: 'bar'
+  #   }
+  # }
 
   # используемая версия API
   # config.api_version = '5.21'

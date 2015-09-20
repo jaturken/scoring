@@ -8,4 +8,4 @@ db_config = {
   database: 'scoring'
 }
 DB = Sequel.connect(db_config)
-DB.loggers << Logger.new($stdout)
+# DB.loggers << Logger.new($stdout)
